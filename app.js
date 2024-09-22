@@ -1,4 +1,5 @@
 // Application Configuration
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const router = require("./src/routes/api");
@@ -27,8 +28,8 @@ app.use('/api/v1', router);
 
 
 // this is for localhost
-mongoose.connect("mongodb://localhost:27017/Practise")
-    .then(() => console.log('Database connected'))
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('CRUD Database Connected'))
     .catch((error) => {
         console.log('Failed to connect with database');
         console.log(error);
