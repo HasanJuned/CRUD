@@ -1,5 +1,7 @@
 // Application Configuration
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
+
 const express = require("express");
 const app = express();
 const router = require("./src/routes/api");
