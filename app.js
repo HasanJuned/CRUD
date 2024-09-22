@@ -28,7 +28,7 @@ app.use('/api/v1', router);
 
 
 // this is for localhost
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI.toString())
     .then(() => console.log('CRUD Database Connected'))
     .catch((error) => {
         console.log('Failed to connect with database');
