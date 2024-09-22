@@ -1,5 +1,5 @@
 // Application Configuration
-require("dotenv").config();
+require("dotenv").config({ path: 'ENV_FILENAME' });
 const express = require("express");
 const app = express();
 const router = require("./src/routes/api");
@@ -28,7 +28,7 @@ app.use('/api/v1', router);
 
 
 // this is for localhost
-mongoose.connect(process.env.MONGODB_URI.toString())
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('CRUD Database Connected'))
     .catch((error) => {
         console.log('Failed to connect with database');
